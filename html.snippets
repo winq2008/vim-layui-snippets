@@ -1,0 +1,167 @@
+snippet layui-init "Layui:create default layui html"
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>开始使用layui</title>
+        <link rel="stylesheet" type="text/css" href="//layui.hcwl520.com.cn/layui/css/layui.css?v=201801090202" />
+        <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+        <!--[if lt IE 9]>
+          <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+          <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->   
+    </head>
+    <body>
+        <div class="layui-container">
+
+        </div>
+        <!-- 你的HTML代码 -->
+        <script src="//layui.hcwl520.com.cn/layui/layui.js?v=201801090202"></script>
+        <script>
+            //一般直接写在一个js文件中
+            layui.use(['layer', 'form'], function(){
+                var layer = layui.layer
+                    ,form = layui.form;
+                layer.msg('Hello World');
+            });
+        </script> 
+    </body>
+</html>
+endsnippet
+
+snippet layui-form "Layui:create default form templte"
+<form class="layui-form" action="">
+  <div class="layui-form-item">
+    <label class="layui-form-label">单行输入框</label>
+    <div class="layui-input-block">
+      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <div class="layui-inline">
+      <label class="layui-form-label">验证手机</label>
+      <div class="layui-input-inline">
+        <input type="tel" name="phone" lay-verify="required|phone" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-inline">
+      <label class="layui-form-label">验证邮箱</label>
+      <div class="layui-input-inline">
+        <input type="text" name="email" lay-verify="email" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+  </div>
+</form>
+endsnippet
+
+
+snippet layui-nav "Layui:create nav template" 
+<ul class="layui-nav">
+  <li class="layui-nav-item"><a href="">最新活动</a></li>
+  <li class="layui-nav-item layui-this">
+    <a href="javascript:;">产品</a>
+    <dl class="layui-nav-child">
+      <dd><a href="">选项1</a></dd>
+      <dd><a href="">选项2</a></dd>
+      <dd><a href="">选项3</a></dd>
+    </dl>
+  </li>
+</ul>
+endsnippet
+
+
+snippet layui-nav-tree "Layui:create nav tree template" 
+<ul class="layui-nav layui-nav-tree layui-inline" lay-filter="demo" style="margin-right: 10px;">
+  <li class="layui-nav-item layui-nav-itemed">
+    <a href="javascript:;">默认展开</a>
+    <dl class="layui-nav-child">
+      <dd><a href="javascript:;">选项一</a></dd>
+      <dd><a href="javascript:;">选项二</a></dd>
+      <dd><a href="javascript:;">选项三</a></dd>
+      <dd><a href="">跳转项</a></dd>
+    </dl>
+  </li>
+  <li class="layui-nav-item">
+    <a href="javascript:;">解决方案</a>
+    <dl class="layui-nav-child">
+      <dd><a href="">移动模块</a></dd>
+      <dd><a href="">后台模版</a></dd>
+      <dd><a href="">电商平台</a></dd>
+    </dl>
+  </li>
+  <li class="layui-nav-item"><a href="">云市场</a></li>
+  <li class="layui-nav-item"><a href="">社区</a></li>
+</ul>
+endsnippet
+
+snippet layui-breadcrumb "Layui:create bread crumb template"
+<span class="layui-breadcrumb" lay-separator="/">
+  <a href="">娱乐</a>
+  <a href="">体育</a>
+</span>
+endsnippet
+
+snippet layui-tab "Layui:create tab template"
+<div class="layui-tab" lay-allowclose="true">
+  <ul class="layui-tab-title">
+    <li class="layui-this">网站设置</li>
+    <li>用户管理</li>
+    <li>订单管理</li>
+  </ul>
+  <div class="layui-tab-content">
+    <div class="layui-tab-item layui-show">
+      1. 高度默认自适应，也可以随意固宽。
+      <br>2. Tab进行了响应式处理，所以无需担心数量多少。
+    </div>
+    <div class="layui-tab-item">内容2</div>
+    <div class="layui-tab-item">内容3</div>
+  </div>
+</div>
+endsnippet
+
+snippet layui-tab-hash "Layui:create tab with hash url"
+<div class="layui-tab" lay-filter="test">
+  <ul class="layui-tab-title">
+    <li class="layui-this" lay-id="11">网站设置</li>
+    <li lay-id="22">用户管理</li>
+    <li lay-id="33">权限分配</li>
+  </ul>
+  <div class="layui-tab-content">
+    <div class="layui-tab-item layui-show">
+      点击该Tab的任一标题，观察地址栏变化，再刷新页面。选项卡将会自动定位到上一次切换的项
+    </div>
+    <div class="layui-tab-item">内容2</div>
+    <div class="layui-tab-item">内容3</div>
+  </div>
+</div>
+endsnippet
+
+snippet  layui-progress "Layui:create progress template"
+<div class="layui-progress">
+  <div class="layui-progress-bar" lay-percent="40%"></div>
+</div>
+endsnippet
+
+snippet layui-card "Layui:create card template"
+<div class="layui-card">
+<div class="layui-card-header">卡片面板</div>
+<div class="layui-card-body">
+  卡片式面板面板通常用于非白色背景色的主体内<br>
+  从而映衬出边框投影
+</div>
+</div>
+endsnippet
+
+
+snippet layui-carousel "Layui:create carousel template" 
+<div class="layui-carousel" id="test1" lay-filter="test1">
+  <div carousel-item="">
+    <div>条目1</div>
+    <div>条目2</div>
+    <div>条目3</div>
+    <div>条目4</div>
+    <div>条目5</div>
+  </div>
+</div> 
+endsnippet
