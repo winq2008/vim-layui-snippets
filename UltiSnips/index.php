@@ -16,9 +16,9 @@ foreach($list as $item) {
     if (empty($item)) {
         continue;
     }
-    $key = str_ireplace('-', '_', $item);
+    //$key = str_ireplace('-', '_', $item);
     file_put_contents(__DIR__ . '/html_keywords.snippets', implode("\n", [
-        "snippet " . $key . ' ' . "\"Layui_Class:" . $item . "\"",
+        "snippet " . $item . ' ' . "\"Layui_Class:" . $item . "\"",
         $item,
         "endsnippet", 
         "\n",
